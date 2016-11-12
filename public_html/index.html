@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js">
+             
+             
+         </script>
+         <script type="text/javascript">
+             function pintaAmarillo(){
+                 //segunda opcion
+                 $('p').css('background-color', 'yellow');
+             }
+             //TERCERA OPCION CON DOS BOTONES CON CLASES
+             function pintaRojo(){
+                 //segunda opcion
+                 $('p').css('background-color', 'red');
+             }
+             
+             function pintaVerde(){
+                 //segunda opcion
+                 $('p').css('background-color', 'green');
+             }
+             
+             function ocultarParrafos(){
+                 $('p').hide();
+             }
+             
+             function mostrarParrafos(){
+                 $('p').show();
+             }
+             
+            $(document).ready(
+                function(){
+                    
+                    //primera opcion
+                    //alert('listo');
+                    //$('p').css('background-color', 'yellow');
+                    
+                    //segunda opcion
+                    //$('button').click(function (){
+                      //  pintaAmarillo();
+                   // });
+                   
+                   //tercera opcion con clases
+                   $('.pintaAmarillo').click(function (){
+                        pintaAmarillo();
+                    });
+                    $('.pintaRojo').click(function (){
+                        pintaRojo();
+                    });
+                   
+                   //PARA ID
+                   $('#btnVerde').click(function (){
+                        pintaVerde();
+                    });
+                    
+                    //solo los parrafos de clase azul estaran de azul desde el principio
+                    $('p.azul').css('background-color', 'blue');
+                    
+                    
+                    $('#btnOcultar').click(function (){
+                        ocultarParrafos();
+                    });
+                    $('#btnMostrar').click(function (){
+                        mostrarParrafos();
+                    });
+                    
+                    $('#formDatos').submit(function(){
+                        var nombre = $('#nombre').val();
+                        var correo = $('#correo').val();
+                        var telefono = $('#telefono').val();
+                        //alert(telefono);
+                        return false;
+                    });
+                    
+                }
+            );
+             
+         </script>
+         
+  
+    </head>
+    <body>
+        <p>TODO write content</p>
+        <p>TODO write content</p>
+        <p>TODO write content</p>
+        <p class="azul">TODO write content</p>
+        <!--PRIMERA OPCION
+        <button onclick="$('p').css('background-color', 'yellow');">Amarillo</button>
+        
+        EL DE ABAJO ES SEGUNDA OPCION
+        <button>Amarillo</button>
+        
+        LOS DE ABAJO SON TERCERA OPCION CON CLASES
+        -->
+        
+        <button class="pintaAmarillo">Amarillo</button>
+        <button class="pintaRojo">Rojo</button>
+        
+        <button id="btnVerde">Verde</button>
+        
+        <button id="btnOcultar">Ocultar</button>
+        <button id="btnMostrar">Mostrar</button>
+        
+           </br></br></br>
+           <hr>
+        <form id="formDatos">
+            Nombre: <input type="text" id="nombre" /> </br>
+            Correo: <input type="text" id="correo" /> </br>
+            Telefono: <input type="text"  id="telefono" /> </br>
+            <button id="btnEnviar">Enviar</button>
+        </form>
+        
+    </body>
+</html>
